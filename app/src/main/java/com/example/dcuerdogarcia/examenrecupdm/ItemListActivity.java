@@ -48,7 +48,8 @@ public class ItemListActivity extends AppCompatActivity
         }
 
     }
-
+//El sexto lo puse dos veces porque le di a enter sin querer
+    //Sería el séptimo con los cambios aquí y en los config.xml
     @Override
     public void onItemSelected(String id) {
         if (mTwoPane) {
@@ -70,7 +71,7 @@ public class ItemListActivity extends AppCompatActivity
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
             startActivityForResult(detailIntent, 1);
         }
-        if (getResources().getBoolean(R.bool.dual_panel)==true){
+        if (getResources().getBoolean(R.bool.dual_panel)==true) {
             // text.setText("Land");
             Toast.makeText(getBaseContext(), "Tumbado", Toast.LENGTH_SHORT).show();
 
