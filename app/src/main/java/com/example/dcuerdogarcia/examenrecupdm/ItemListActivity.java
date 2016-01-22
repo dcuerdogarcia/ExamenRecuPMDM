@@ -70,6 +70,15 @@ public class ItemListActivity extends AppCompatActivity
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
             startActivityForResult(detailIntent, 1);
         }
+        if (getResources().getBoolean(R.bool.dual_panel)==true){
+            // text.setText("Land");
+            Toast.makeText(getBaseContext(), "Tumbado", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (getResources().getBoolean(R.bool.dual_panel)==false){
+            // text.setText("Portrait");
+            Toast.makeText(getBaseContext(), "Portrait", Toast.LENGTH_SHORT).show();
+        }
     }
     //Creo el metodo onActivityResult para poder recibir desde el intent
     @Override
