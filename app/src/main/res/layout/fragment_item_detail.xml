@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-
+<!--Creo el botón borrar en todos los items de la lista-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
