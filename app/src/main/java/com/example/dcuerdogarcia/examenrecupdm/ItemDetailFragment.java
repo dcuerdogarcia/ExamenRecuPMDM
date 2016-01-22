@@ -55,12 +55,15 @@ public class ItemDetailFragment extends Fragment {
             boton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //creo un boton para que si el fragment no esta cargado sea portrait y si esta cargado sea land
                     ItemListFragment fragment = (ItemListFragment) getFragmentManager().findFragmentById(R.id.item_list);
                     if (fragment == null || !fragment.isInLayout()) {
+                        //getActivity le mando al onActivityResult de la clase ItemListActivity un result_OK y la cierro.
                         Intent intent = new Intent();
                         getActivity().setResult(Activity.RESULT_OK, intent);
                         getActivity().finish();
                     } else {
+                        //borro el texto del detail
                         ((TextView) rootView.findViewById(R.id.item_detail)).setText("");
                     }
                 }

@@ -64,6 +64,7 @@ public class ItemListActivity extends AppCompatActivity
                     .replace(R.id.item_detail_container, fragment)
                     .commit();
 
+            //mando con el forResult el intent y el numero que recibirá el requestCode
         } else {
             // In single-pane mode, simply start the detail activity
             // for the selected item ID.
@@ -71,11 +72,13 @@ public class ItemListActivity extends AppCompatActivity
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
             startActivityForResult(detailIntent, 1);
         }
+        //Si la variable dualpanel es true saco la toast
         if (getResources().getBoolean(R.bool.dual_panel)==true) {
             // text.setText("Land");
             Toast.makeText(getBaseContext(), "Tumbado", Toast.LENGTH_SHORT).show();
 
         }
+        //si es false esta en portrait y sacomos la toast
         else if (getResources().getBoolean(R.bool.dual_panel)==false){
             // text.setText("Portrait");
             Toast.makeText(getBaseContext(), "Portrait", Toast.LENGTH_SHORT).show();
@@ -84,6 +87,8 @@ public class ItemListActivity extends AppCompatActivity
     //Creo el metodo onActivityResult para poder recibir desde el intent
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        //si recibe un requestCode del intent y un activity.resultOk tambien del intent muestra una toast Cerrada
         if (requestCode == 1) {
             if (resultCode == Activity.RESULT_OK) {
                 Toast.makeText(getBaseContext(), "Activity Cerrada", Toast.LENGTH_SHORT).show();
