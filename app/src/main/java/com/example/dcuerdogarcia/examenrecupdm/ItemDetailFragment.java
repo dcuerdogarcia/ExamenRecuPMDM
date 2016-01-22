@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.example.dcuerdogarcia.examenrecupdm.dummy.DummyContent;
 
 
-
 public class ItemDetailFragment extends Fragment {
 
     public static final String ARG_ITEM_ID = "item_id";
